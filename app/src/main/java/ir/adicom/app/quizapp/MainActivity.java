@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final TextView txtQuestion = (TextView) findViewById(R.id.textView);
-        TextView txtIndex = (TextView) findViewById(R.id.textView2);
+        final TextView txtIndex = (TextView) findViewById(R.id.textView2);
         final RadioButton rb1 = (RadioButton) findViewById(R.id.radioButton);
         final RadioButton rb2 = (RadioButton) findViewById(R.id.radioButton2);
         final RadioButton rb3 = (RadioButton) findViewById(R.id.radioButton3);
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         final RadioGroup group = (RadioGroup) findViewById(R.id.radioGroup);
 
         if (index < questions.length) {
+            txtIndex.setText((index+1) + " از " + questions.length);
             txtQuestion.setText(questions[index]);
             rb1.setText(answers[index][0]);
             rb2.setText(answers[index][1]);
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 index++;
                 if (index < questions.length) {
+                    txtIndex.setText((index+1) + " از " + questions.length);
                     txtQuestion.setText(questions[index]);
                     rb1.setText(answers[index][0]);
                     rb2.setText(answers[index][1]);
